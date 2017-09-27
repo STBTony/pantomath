@@ -1,4 +1,4 @@
-# analytics-slackbot
+# analytics-slackbot  [In Development]
 A web analytics tool integrated with slack webhooks.
 Built for the analytical reasons for static/github pages since no server logic can be done on github pages. 
 
