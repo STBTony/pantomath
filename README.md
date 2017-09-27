@@ -11,10 +11,10 @@ Connection Location, Device Location, Broswer Information, Device CPU, Device OS
 
 ## Set Up
 ### Step 1
-Create a Slack workspace if you don't have one yet. go to [slack.com]
+Create a Slack workspace if you don't have one yet. go to [HERE](https://slack.com/)
 ### Step 2
-Set up a Sleack Incoming Webhook Integration [https://your-workspace.slack.com/apps/manage/custom-integrations]
-Retrieve the Webhook API URL like this one [https://hooks.slack.com/services/somerandomstuffforsecurity]
+Set up a Sleack Incoming Webhook Integration [HERE](https://your-workspace.slack.com/apps/manage/custom-integrations)
+Retrieve the Webhook API URL like this one [HERE](https://hooks.slack.com/services/somerandomstuffforsecurity)
 ### Step 3
 Put that Webhook API URL into analytics-slackbot.js
 And add the js file to your html or server
