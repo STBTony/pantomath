@@ -3,7 +3,8 @@ A web analytics tool integrated with slack webhooks.
 
 Web Data Includes:
 Connection Location, Device Location, Broswer Information, Device CPU, Device OS, Device Battery Information, Connection Information (IP, HOST, Previous Page)
-<img src="Example-1.PNG" width="400">
+<img src="Example-1.PNG" width="600">
+<img src="Example-2.PNG" width="600">
 
 ## Set UP
 ### Step 1
