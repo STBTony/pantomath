@@ -1,4 +1,5 @@
-# analytics-slackbot  [In Development]
+# Pantomath - a slack webhook integration for web analytics
+### analytics-slackbot  [In Development]
 A web analytics tool integrated with slack webhooks.
 Built for the analytical reasons for static/github pages since no server logic can be done on github pages. 
 
